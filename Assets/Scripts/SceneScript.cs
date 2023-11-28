@@ -16,6 +16,12 @@ namespace QuickStart
         [SyncVar(hook = nameof(OnStatusTextChanged))]
         public string statusText;
         
+        public TMP_Text canvasAmmoText;
+    
+        public void UIAmmo(int _value)
+        {
+            canvasAmmoText.text = "Ammo: " + _value;
+        }
 
         void OnStatusTextChanged(string _Old, string _New)
         {
