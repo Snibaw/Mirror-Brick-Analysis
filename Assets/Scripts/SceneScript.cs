@@ -17,6 +17,7 @@ namespace QuickStart
         public string statusText;
         
         public TMP_Text canvasAmmoText;
+        public TMP_InputField canvasMessageInput;
     
         public void UIAmmo(int _value)
         {
@@ -32,7 +33,7 @@ namespace QuickStart
         public void ButtonSendMessage()
         {
             if (playerScript != null)  
-                playerScript.CmdSendPlayerMessage();
+                playerScript.CmdSendPlayerMessage(canvasMessageInput.text);
         }
         
         public void ButtonChangeScene()

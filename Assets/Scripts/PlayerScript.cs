@@ -69,10 +69,10 @@ namespace QuickStart
         }
         
         [Command]
-        public void CmdSendPlayerMessage()
+        public void CmdSendPlayerMessage(String _message)
         {
             if (sceneScript) 
-                sceneScript.statusText = $"{playerName} says hello {Random.Range(10, 99)}";
+                sceneScript.statusText = $"{playerName} says {_message}";
         }
 
         [Command]
