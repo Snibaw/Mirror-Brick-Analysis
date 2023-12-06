@@ -1,10 +1,13 @@
-using System;
 using UnityEngine;
 using Mirror;
+using UnityEngine.UI;
+
 public class MoleHole : NetworkBehaviour
 {
     [SerializeField] private Animator moleAnimator;
-    private bool isMoleVisible = false;
+
+    [SyncVar(hook = nameof(OnMoleVisibilityChanged))]
+    public bool isMoleVisible = false;
 
     private void Start()
     {
@@ -13,34 +16,27 @@ public class MoleHole : NetworkBehaviour
         {
             Debug.LogError("Animator component not found on MoleHole");
         }
-    }
 
-    public void ClickOnMoleHole()
-    {
+        // Ensure initial state is synced to clients, only on the server
         if (isServer)
         {
-            // Only the server player is allowed to click the mole hole
-            Debug.Log("Server player clicked the mole hole");
-            ToggleMoleVisibility();
+            SetMoleVisibility(isMoleVisible);
         }
     }
-    void ToggleMoleVisibility()
-    {
-        // Toggle the mole's visibility
-        isMoleVisible = !isMoleVisible;
 
-        // Inform clients about the mole visibility change
-        RpcToggleMoleVisibility(isMoleVisible);
-    }
-    [ClientRpc]
-    void RpcToggleMoleVisibility(bool isVisible)
+    public void SetMoleVisibility(bool isVisible)
     {
-        // This function will be called on all clients
-        // You can handle client-side logic based on the mole's visibility
+        isMoleVisible = isVisible;
+
         if (moleAnimator != null)
         {
-            // Trigger the "ShowMole" animation
             moleAnimator.SetBool("ShowMole", isVisible);
         }
+    }
+
+    // This method is called whenever the SyncVar changes
+    void OnMoleVisibilityChanged(bool oldVisibility, bool newVisibility)
+    {
+        SetMoleVisibility(newVisibility);
     }
 }

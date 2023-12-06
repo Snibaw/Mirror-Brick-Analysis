@@ -189,6 +189,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   moleAnimator: {fileID: 6024616248326468505}
+  isMoleVisible: 0
 --- !u!114 &4004365930492265728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +390,10 @@ PrefabInstance:
     - target: {fileID: 7827436072582195630, guid: 45d18fa8d4fdc5e4c9bbd3660cbdbaf8, type: 3}
       propertyPath: m_Name
       value: RectMaskMole
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847030425154089328, guid: 45d18fa8d4fdc5e4c9bbd3660cbdbaf8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
