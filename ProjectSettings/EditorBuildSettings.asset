@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RomainOtherScene.unity
     guid: 16a7beba35b54b74db2892d5eb48fcf3
+  - enabled: 1
+    path: Assets/Scenes/Whac-A-Mole.unity
+    guid: 44a71eb680acbcf409314e1f79fa1700
   m_configObjects: {}

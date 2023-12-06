@@ -52,7 +52,7 @@ MonoBehaviour:
   autoConnectClientBuild: 0
   sendRate: 60
   offlineScene: Assets/Scenes/Menu.unity
-  onlineScene: Assets/Scenes/Romain.unity
+  onlineScene: Assets/Scenes/Whac-A-Mole.unity
   transport: {fileID: 0}
   networkAddress: localhost
   maxConnections: 100

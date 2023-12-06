@@ -842,6 +842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4223870305664448190, guid: db6c0945675bba2418d84db00240ccaf, type: 3}
+      propertyPath: onlineScene
+      value: Assets/Scenes/Whac-A-Mole.unity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
